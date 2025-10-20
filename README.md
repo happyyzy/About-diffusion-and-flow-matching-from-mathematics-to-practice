@@ -147,7 +147,7 @@ $$v^\star(x, t) = \mathbb{E}[X_1 - X_0 \mid X_t = x]$$
 $\psi_t(x) := \tfrac{1 - t}{2} \|x\|^2 + t \, \varphi(x).$
 
 因为 $(1 - t) > 0$ 且 $\varphi$ 为凸函数，所以 $\psi_t$ 是严格凸的。  
-根据[数学知识](注释)其梯度
+根据[数学知识](#注释)其梯度
 
 $\nabla \psi_t(x) = (1 - t)x + t \nabla \varphi(x) = \Phi_t(x)$
 
