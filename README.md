@@ -1,5 +1,5 @@
 # About-diffusion-and-flow-matching-from-mathematics-to-practice
-从数学的角度解释当今最流行的t2l框架：diffusion和rectified flow，从高层理论解释如何一眼看破在stable diffusion和flux各版本训练/推理中出现的trick.
+从数学的角度解释当今最流行的t2l框架：diffusion和rectified flow，从高层理论解释如何一眼看破在stable diffusion和flux各版本训练/推理中出现的trick。也可以看作[MIT S186 diff and flow matching](https://diffusion.csail.mit.edu/)的理论注解，毕竟这堂课就讲这俩模型。
 
 ## 什么是flow matching
 flow matching的想法很简单，过去的生成算法都是encoder-decoder,训练数据要从encoder流入latent space,推理时再从latent space出发流到真实图像分布，那为啥不直接学习后者的向量场呢？
