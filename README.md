@@ -806,10 +806,10 @@ $
 
 再两边乘以 $e^{\int_0^{t_{n+1}} A(s)\,ds}$：
 
-$\displaystyle 
+$$
 x_{t_{n+1}} = e^{\int_{t_n}^{t_{n+1}} A(s)\,ds} \, x_{t_n}
 + \int_{t_n}^{t_{n+1}} e^{\int_{s}^{t_{n+1}} A(u)\,du}\, g(x_s, s) \, ds.
-$
+$$
 
 这就是**指数积分器（Exponential Integrator）**的精确形式。
 
@@ -819,12 +819,12 @@ $
 
 代入 $A(t) = -\frac{1}{2}\beta(t)I$ 与 $g(x_t, t) = -\frac{1}{2}\beta(t)\epsilon_\theta(x_t, t)$，得：
 
-$\displaystyle 
+$$
 x_{t_{n+1}}
 = e^{-\int_{t_n}^{t_{n+1}} \frac{\beta(s)}{2}ds} \, x_{t_n}
 - \int_{t_n}^{t_{n+1}} e^{-\int_{s}^{t_{n+1}} \frac{\beta(u)}{2}du}
 \, \frac{\beta(s)}{2}\, \epsilon_\theta(x_s, s) \, ds.
-$
+$$
 
 ---
 
