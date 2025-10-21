@@ -829,8 +829,9 @@ $$
 ---
 
 最最后提一嘴，从数学角度看，rf和diffusion的ode形式不同，应当采取不同的ode求解器，比如DPM就不应用于SD3/SD3.5，也有一些文章支持此观点：
->“For evaluations on Stable Diffusion 3 [10], we exclude DPM-Solver++ from comparison, as UniPC has consistently outperformed it.”
->from [arxiv]('https://arxiv.org/html/2506.21757v2?utm_source=chatgpt.com')
+> “For evaluations on Stable Diffusion 3 [10], we exclude DPM-Solver++ from comparison, as UniPC has consistently outperformed it.”  
+> from [arxiv](https://arxiv.org/html/2506.21757v2?utm_source=chatgpt.com)
+
 
 
 
