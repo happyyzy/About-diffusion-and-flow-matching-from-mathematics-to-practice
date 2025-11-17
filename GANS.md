@@ -1,0 +1,22 @@
+# 回忆一下gan里的数学
+WGAN：把判别器loss换成两个分布的欧氏距离最优传输cost，Kantorovich–Rubinstein 对偶指出这个优化实际上就是一种判别，判别函数是1-lip函数，用神经网络逼近这个函数，用惩罚项限制1-lip。
+思路非常简洁：最小化z到pdata的传输cost就是最大化判别差异。代替JS散度大大提高训练稳定性。回忆一下rectified flow里面用到两个分布的L2最优传输cost的Breiner定理来说明对样本做coupling的必要性。
+另外熟悉Markov chain极限分布定理的可以想到两条chain的coupling最后如何渐渐靠近导致收敛（successful）。
+1.存在successful coupling导致所有初始分布流向相同分布，也导致所有有界调和函数是常数。图论情况就是拉普拉斯矩阵的核空间是一维，即有限连通图，此时不必要是aperiodic的。
+2.irreducible, positive recurrent,aperiodic Markov chain的independent coalescent chain是successful
+注意即使Recurrence, irreducibility and aperiodicity也未必successful
+另外如果状态空间结构做些限制，那么可以去掉Recurrence条件：
+3.格点上的aperiodic and irreducible random walk存在successful，从而如果存在稳定分布那么一定收敛到它
+4，对格点上的irreducible random walk可以构造新的aperiodic and irreducible random walk使得两者调和函数一样，从而后者存在successful，从而前者和后者一样有界调和函数是常数
+进一步，对LCA也成立：irreducible random walk有界调和函数是常数
+这种空间对称性导致的自动正则现象在在随机过程里也有其他体现，比如一些自动遍历现象。
+往深了说，它是一般的自动正则哲学的体现：比如李群上的可测映射都光滑乃至analytic，紧复李群都交换，椭圆曲线之间的algbraic映射必然是群同态等等。
+最简单的例子就是可加函数的构造，不满足可测性的话可以用Hamel basis做有很多稀奇古怪的例子，比如处处无界，图像全平面稠密。
+
+最后再指出Kantorovich–Rubinstein 对偶其实就是泛函分析的对偶，一个测度空间的metric写成函数空间的泛函。
+比如测度空间的TV距离是compact surpport函数空间的对偶，同时也有一个coupling极小化的形式：coupling对乘积空间去掉对角线的最小值。
+以上可参见klenke
+
+StyleGAN:提出w空间做隐空间，类似sd的ae也不是高斯，生成时上采样每层用w做线性变换代表风格，还要加噪渲染细节，hinge loss
+StyleGAN3:卷积核选圆盘characterisctic函数jinc来保证旋转等遍，出现bessel函数
+人脸变年轻：方向向量，svm，直接算等等
