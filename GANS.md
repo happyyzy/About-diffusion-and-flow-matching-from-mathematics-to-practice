@@ -26,3 +26,5 @@ WGAN：把判别器loss换成两个分布的欧氏距离最优传输cost，Kanto
 StyleGAN:提出w空间做隐空间，类似sd的ae也不是高斯，生成时上采样每层用w做线性变换代表风格，还要加噪渲染细节，hinge loss
 StyleGAN3:卷积核选圆盘characterisctic函数jinc来保证旋转等遍，出现bessel函数
 人脸变年轻：方向向量，svm，直接算等等
+
+另外最有传输从此进入生成模型，有论文证明diffusion的loss是最有传输目标的上界，rectified flow也是最优传输
