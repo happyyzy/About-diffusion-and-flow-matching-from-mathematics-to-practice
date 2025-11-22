@@ -1,4 +1,5 @@
 # 回忆一下gan里的数学
+演化路线：biggan hinge loss训练难--wgan训练稳定成本高生成质量一般--wgan_div zero center梯度惩罚，能量解释很完美-stygan hinge loss+zero center梯度惩罚，终极版本--后续 styganT
 WGAN：把判别器loss换成两个分布的欧氏距离最优传输cost，Kantorovich–Rubinstein 对偶指出这个优化实际上就是一种判别，判别函数是1-lip函数，用神经网络逼近这个函数，用惩罚项限制1-lip。
 思路非常简洁：最小化z到pdata的传输cost就是最大化判别差异。代替JS散度大大提高训练稳定性。回忆一下rectified flow里面用到两个分布的L2最优传输cost的Breiner定理来说明对样本做coupling的必要性。
 另外熟悉Markov chain极限分布定理的可以想到两条chain的coupling最后如何渐渐靠近导致收敛（successful）。
@@ -17,6 +18,11 @@ WGAN：把判别器loss换成两个分布的欧氏距离最优传输cost，Kanto
 比如测度空间的TV距离是compact surpport函数空间的对偶，同时也有一个coupling极小化的形式：coupling对乘积空间去掉对角线的最小值。
 以上可参见klenke
 
+后来把1-center的梯度惩罚换成0-center原因主要两方面：
+1.有论文证明0-center的最优解就是最有传输的最优解，相比1-center这种粗糙做法理论性质好
+2.有能量解释，非常直观
+
+到stygan集大成，hinge loss+zero center梯度惩罚，以及各种工程技巧
 StyleGAN:提出w空间做隐空间，类似sd的ae也不是高斯，生成时上采样每层用w做线性变换代表风格，还要加噪渲染细节，hinge loss
 StyleGAN3:卷积核选圆盘characterisctic函数jinc来保证旋转等遍，出现bessel函数
 人脸变年轻：方向向量，svm，直接算等等
