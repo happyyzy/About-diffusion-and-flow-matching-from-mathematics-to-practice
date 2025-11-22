@@ -15,7 +15,7 @@ $$
 = \max_{\theta}\, \log \int p_{\theta}(x \mid z)\, p(z)\, dz
 $$
 
-这里面只包含 decoder 的 $\theta$ 参数，然而隐空间的分布 $p(z)$ 不知道，所以引入 encoder 参数 $\phi$，用 $q_{\phi}(z)$ 来逼近。
+这里面只包含 decoder 的 $\theta$ 参数，然而隐空间的分布 $p(z)$ 不知道，所以引入 encoder 参数 $\phi$，用encoder的条件分布 $q_{\phi}(z|x)$ 来近似隐空间分布。
 
 ---
 
