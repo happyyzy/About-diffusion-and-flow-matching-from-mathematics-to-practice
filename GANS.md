@@ -27,4 +27,6 @@ StyleGAN:提出w空间做隐空间，类似sd的ae也不是高斯，生成时上
 StyleGAN3:卷积核选圆盘characterisctic函数jinc来保证旋转等遍，出现bessel函数
 人脸变年轻：方向向量，svm，直接算等等
 
-另外最有传输从此进入生成模型，有论文证明diffusion的loss是最有传输目标的上界，rectified flow也是最优传输
+另外最优传输从此进入生成模型，有论文证明diffusion的loss是最优传输目标的上界，rectified flow也是最优传输
+
+最后虽然目前主流AIGC大模型不用GAN了，但是GAN的思想很有用，比如出现在SD tuorbo的对抗蒸馏训练里面。
