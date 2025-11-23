@@ -4,7 +4,10 @@
 已经整理为pdf文件：
 
 [rectified flow](rf.pdf)
+
 [vae](vae.pdf)
+
+[gan](gan.pdf)
 
 ## 什么是flow matching
 flow matching的想法很简单，过去的生成算法都是encoder-decoder,训练数据要从encoder流入latent space,推理时再从latent space出发流到真实图像分布，那为啥不直接学习后者的向量场呢？
